@@ -15,13 +15,12 @@
 }
 
 body {
-
     font-family: sans-serif;
     line-height: 1.6;
     margin: 20px;
-    /* background-color: grey; */
-    background-color: red;
- color: black;
+    background-color: grey; 
+    /* background-color: red; */
+    color: black;
 }
 
 /* Ensure navbar links and brand inherit or are set to the navbar text color */
