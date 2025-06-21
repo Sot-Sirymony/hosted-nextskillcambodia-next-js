@@ -128,39 +128,6 @@ class CourseManager {
     });
 
     console.log('Category filter populated with', this.categories.length, 'categories');
-    
-    // Also render the categories showcase
-    this.renderCategoriesShowcase();
-  }
-
-  renderCategoriesShowcase() {
-    const container = document.getElementById('categories-showcase');
-    if (!container) {
-      console.error('Categories showcase container not found!');
-      return;
-    }
-
-    const categoryCards = this.categories.map(category => {
-      const courseCount = this.courses.filter(course => course.category === category.name).length;
-      
-      return `
-        <div class="col-6 col-md-4 col-lg-3 mb-3">
-          <div class="card category-card h-100 text-center" 
-               style="border-left: 4px solid ${category.color}; cursor: pointer;"
-               onclick="courseManager.filterByCategory('${category.name}')">
-            <div class="card-body">
-              <div class="category-icon mb-2" style="font-size: 2rem;">${category.icon}</div>
-              <h6 class="card-title">${category.name}</h6>
-              <p class="card-text small text-muted">${category.description}</p>
-              <span class="badge bg-secondary">${courseCount} courses</span>
-            </div>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    container.innerHTML = categoryCards;
-    console.log('Categories showcase rendered');
   }
 
   filterByCategory(categoryName) {
@@ -469,16 +436,22 @@ class UIEnhancer {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+          // Add animation class and flag
           entry.target.classList.add('animate-fade-in-up');
-          observer.unobserve(entry.target); // Only animate once
+          entry.target.classList.add('animated');
+          
+          // Remove observer after animation starts
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
     // Observe elements for animation
     const animateElements = document.querySelectorAll('.card, .testimonial-card, h2, h3');
-    animateElements.forEach(el => observer.observe(el));
+    animateElements.forEach(el => {
+      observer.observe(el);
+    });
   }
 
   setupHoverEffects() {
@@ -600,31 +573,6 @@ class UIEnhancer {
     }, 3000);
   }
 }
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM Content Loaded - Starting initialization...');
-  
-  // Initialize course manager
-  console.log('Creating CourseManager...');
-  window.courseManager = new CourseManager();
-  
-  // Initialize UI enhancer
-  console.log('Creating UIEnhancer...');
-  window.uiEnhancer = new UIEnhancer();
-  
-  // Add some CSS for notifications
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes slideOutRight {
-      from { transform: translateX(0); opacity: 1; }
-      to { transform: translateX(100%); opacity: 0; }
-    }
-  `;
-  document.head.appendChild(style);
-  
-  console.log('Initialization complete!');
-});
 
 // Export for global access
 window.CourseManager = CourseManager;

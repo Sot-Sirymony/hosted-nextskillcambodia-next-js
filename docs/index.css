@@ -88,11 +88,12 @@ html {
   transform: translateY(-1px);
 }
 
-.navbar-brand img {
+/* Removed conflicting navbar logo styles - now handled by header.css */
+/* .navbar-brand img {
   height: 40px;
   width: auto;
   transition: var(--transition);
-}
+} */
 
 .navbar-brand span {
   font-size: 1.1rem;

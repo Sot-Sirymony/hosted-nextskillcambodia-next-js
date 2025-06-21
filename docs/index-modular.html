@@ -72,9 +72,7 @@
     // Load all templates when the page loads
     document.addEventListener('DOMContentLoaded', async function() {
       try {
-        console.log('Starting template loading...');
-        
-        // Load all templates in parallel
+        // Load all templates in parallel (categories removed)
         await loadTemplates([
           'header',
           'hero', 
@@ -84,66 +82,22 @@
           'footer'
         ]);
 
-        console.log('Templates loaded, injecting into DOM...');
-
-        // Inject templates into their placeholders
+        // Inject templates into their placeholders (categories removed)
         window.templateLoader.injectTemplate('header', '#header-placeholder');
-        console.log('Header template injected');
-        
         window.templateLoader.injectTemplate('hero', '#hero-placeholder');
-        console.log('Hero template injected');
-        
         window.templateLoader.injectTemplate('courses', '#courses-placeholder');
-        console.log('Courses template injected');
-        
         window.templateLoader.injectTemplate('testimonials', '#testimonials-placeholder');
-        console.log('Testimonials template injected');
-        
         window.templateLoader.injectTemplate('newsletter', '#newsletter-placeholder');
-        console.log('Newsletter template injected');
-        
         window.templateLoader.injectTemplate('footer', '#footer-placeholder');
-        console.log('Footer template injected');
 
-        // Check if testimonials section exists
-        setTimeout(() => {
-          const testimonialsSection = document.querySelector('.testimonials-section');
-          console.log('Testimonials section found:', testimonialsSection);
-          if (testimonialsSection) {
-            console.log('Testimonials section display:', window.getComputedStyle(testimonialsSection).display);
-            console.log('Testimonials section visibility:', window.getComputedStyle(testimonialsSection).visibility);
-          }
-        }, 200);
-
-        // Wait a moment for DOM to update, then initialize the main application
-        setTimeout(() => {
-          console.log('Templates loaded, initializing application...');
-          
-          // Initialize course manager
-          console.log('Creating CourseManager...');
-          window.courseManager = new CourseManager();
-          
-          // Initialize UI enhancer
-          console.log('Creating UIEnhancer...');
-          window.uiEnhancer = new UIEnhancer();
-          
-          // Add some CSS for notifications
-          const style = document.createElement('style');
-          style.textContent = `
-            @keyframes slideOutRight {
-              from { transform: translateX(0); opacity: 1; }
-              to { transform: translateX(100%); opacity: 0; }
-            }
-          `;
-          document.head.appendChild(style);
-          
-          console.log('Initialization complete!');
-        }, 100);
-
+        // Initialize the main application after templates are loaded
+        if (typeof initializeApp === 'function') {
+          initializeApp();
+        }
       } catch (error) {
         console.error('Error loading templates:', error);
       }
     });
   </script>
 </body>
-</html>
+</html> 
