@@ -1,0 +1,42 @@
+[
+  {
+    "id": "web-development",
+    "name": "Web Development",
+    "description": "Learn to build modern websites and web applications",
+    "icon": "🌐",
+    "color": "#007bff",
+    "courses": ["web-dev"]
+  },
+  {
+    "id": "database",
+    "name": "Database",
+    "description": "Master database design, development, and management",
+    "icon": "🗄️",
+    "color": "#28a745",
+    "courses": ["database-dev"]
+  },
+  {
+    "id": "devops",
+    "name": "DevOps",
+    "description": "Automate development and operations workflows",
+    "icon": "⚙️",
+    "color": "#ffc107",
+    "courses": ["devops"]
+  },
+  {
+    "id": "data-science",
+    "name": "DataScience",
+    "description": "Analyze data and build machine learning models",
+    "icon": "📊",
+    "color": "#dc3545",
+    "courses": ["data-science"]
+  },
+  {
+    "id": "ai",
+    "name": "AI",
+    "description": "Explore artificial intelligence and machine learning",
+    "icon": "🤖",
+    "color": "#6f42c1",
+    "courses": []
+  }
+] 

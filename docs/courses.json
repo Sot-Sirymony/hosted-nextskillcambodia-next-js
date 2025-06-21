@@ -28,6 +28,16 @@
       "skills": ["CI/CD", "Docker", "Kubernetes"],
       "status": "Open",
       "image": "https://shalb.com/wp-content/uploads/2019/11/Devops1.jpeg"
+    },
+    {
+      "id": "data-science",
+      "title": "Data Science Mastery",
+      "category": "DataScience",
+      "difficulty": "Intermediate/Advanced",
+      "description": "Master data analysis, machine learning, and statistical modeling techniques.",
+      "skills": ["Python", "Machine Learning", "Statistics"],
+      "status": "Open",
+      "image": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*_UuR8PJcNprfpqFvQh2q8A.png"
     }
   ]
   
