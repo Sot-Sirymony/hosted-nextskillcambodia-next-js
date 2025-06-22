@@ -105,6 +105,105 @@
   transform: translateY(-50%) scale(1.1);
 }
 
+/* Fixed Floating Telegram Button */
+.floating-telegram-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  animation: slideInRight 0.6s ease 1s both, pulse 2s ease-in-out infinite 2s;
+  border-radius: 50%;
+}
+
+.telegram-fixed-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #0088cc, #00a8ff);
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.telegram-fixed-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.telegram-fixed-btn:hover::before {
+  left: 100%;
+}
+
+.telegram-fixed-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 136, 204, 0.4);
+  background: linear-gradient(135deg, #0077b3, #0099e6);
+}
+
+.telegram-fixed-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.telegram-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.telegram-fixed-btn:hover .telegram-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.telegram-text {
+  display: none;
+}
+
+/* Pulse animation for attention */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6), 0 0 0 10px rgba(0, 136, 204, 0.1);
+    border-radius: 50%;
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .hero-stats {
   display: flex;
   gap: 2rem;
@@ -253,6 +352,23 @@
   .card-content p {
     font-size: 0.8rem;
   }
+  
+  /* Floating Telegram Button - Tablet */
+  .floating-telegram-btn {
+    bottom: 25px;
+    right: 25px;
+  }
+  
+  .telegram-fixed-btn {
+    width: 55px;
+    height: 55px;
+    padding: 14px;
+  }
+  
+  .telegram-icon {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -277,5 +393,49 @@
   
   .stat-number {
     font-size: 2rem;
+  }
+  
+  /* Floating Telegram Button - Mobile */
+  .floating-telegram-btn {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .telegram-fixed-btn {
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+  }
+  
+  .telegram-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .telegram-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Floating Telegram Button - Small Mobile */
+  .floating-telegram-btn {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .telegram-fixed-btn {
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+  }
+  
+  .telegram-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .telegram-text {
+    font-size: 12px;
   }
 } 
