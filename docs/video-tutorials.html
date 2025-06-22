@@ -6,10 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Free video tutorials and learning resources from NextSkill Cambodia. Learn web development, programming, and more through our curated YouTube playlists." />
   <link rel="stylesheet" href="./video-tutorials.css" />
+  <link rel="stylesheet" href="./css/header.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img loading="lazy" src="./img/next_skill.png" alt="NextSkill Cambodia" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="video-tutorials.html">Video Tutorials</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <!-- Header Section -->
   <header class="tutorials-header">
     <div class="container">
@@ -24,9 +45,9 @@
 
   <!-- Main Content -->
   <main class="tutorials-main">
-    <div class="container">
-      <!-- Hero Section -->
-      <div class="tutorials-hero">
+    <!-- Hero Section -->
+    <div class="tutorials-hero">
+      <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="hero-content">
@@ -58,7 +79,9 @@
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="container">
       <!-- Tutorial Categories -->
       <div class="tutorials-content">
         <div class="section-header">
@@ -83,9 +106,12 @@
             <div class="col-lg-8">
               <div class="video-player">
                 <div class="video-placeholder">
-                  <i class="fab fa-youtube"></i>
-                  <h3>Web Development Fundamentals</h3>
-                  <p>Click on a video from the playlist to start learning</p>
+                  <img src="https://img.youtube.com/vi/UB1O30fR-EE/hqdefault.jpg" alt="Web Development Fundamentals" class="featured-thumbnail" />
+                  <div class="play-button-overlay">
+                    <i class="fab fa-youtube"></i>
+                    <h3>Web Development Fundamentals</h3>
+                    <p>Click to start learning</p>
+                  </div>
                 </div>
                 <iframe id="main-video" 
                         src="https://www.youtube.com/embed/videoseries?list=PLr6-GrHUlVf_ZNmuQSXdS197Oyr1L9sPB" 
@@ -152,6 +178,9 @@
     </div>
   </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
   <script>
     // Tutorial data
     const tutorialData = {
@@ -213,7 +242,7 @@
           category: 'web-dev',
           duration: '2 hours',
           level: 'Beginner',
-          thumbnail: 'https://img.youtube.com/vi/UB1O30fR-EE/maxresdefault.jpg',
+          thumbnail: 'https://img.youtube.com/vi/UB1O30fR-EE/hqdefault.jpg',
           videoId: 'UB1O30fR-EE'
         },
         {
@@ -223,7 +252,7 @@
           category: 'web-dev',
           duration: '3 hours',
           level: 'Beginner',
-          thumbnail: 'https://img.youtube.com/vi/1PnVor36_40/maxresdefault.jpg',
+          thumbnail: 'https://img.youtube.com/vi/1PnVor36_40/hqdefault.jpg',
           videoId: '1PnVor36_40'
         },
         {
@@ -233,7 +262,7 @@
           category: 'javascript',
           duration: '4 hours',
           level: 'Beginner',
-          thumbnail: 'https://img.youtube.com/vi/W6NZfCO5SIk/maxresdefault.jpg',
+          thumbnail: 'https://img.youtube.com/vi/W6NZfCO5SIk/hqdefault.jpg',
           videoId: 'W6NZfCO5SIk'
         },
         {
@@ -243,7 +272,7 @@
           category: 'react',
           duration: '5 hours',
           level: 'Intermediate',
-          thumbnail: 'https://img.youtube.com/vi/w7ejDZ8SWv8/maxresdefault.jpg',
+          thumbnail: 'https://img.youtube.com/vi/w7ejDZ8SWv8/hqdefault.jpg',
           videoId: 'w7ejDZ8SWv8'
         },
         {
@@ -253,7 +282,7 @@
           category: 'nodejs',
           duration: '3 hours',
           level: 'Intermediate',
-          thumbnail: 'https://img.youtube.com/vi/Oe421EPjeBE/maxresdefault.jpg',
+          thumbnail: 'https://img.youtube.com/vi/Oe421EPjeBE/hqdefault.jpg',
           videoId: 'Oe421EPjeBE'
         },
         {
@@ -263,7 +292,7 @@
           category: 'python',
           duration: '6 hours',
           level: 'Beginner',
-          thumbnail: 'https://img.youtube.com/vi/kqtD5dpn9C8/maxresdefault.jpg',
+          thumbnail: 'https://img.youtube.com/vi/kqtD5dpn9C8/hqdefault.jpg',
           videoId: 'kqtD5dpn9C8'
         }
       ]
@@ -296,7 +325,9 @@
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="tutorial-card" onclick="window.location.href='video-playlist-detail.html?course=${tutorial.category}'">
             <div class="tutorial-thumbnail">
-              <img src="${tutorial.thumbnail}" alt="${tutorial.title}" />
+              <img src="${tutorial.thumbnail}" 
+                   alt="${tutorial.title}" 
+                   onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNjAgOTBDMTY4LjI4NCA5MCAxNzUgODMuMjg0MyAxNzUgNzVDMTc1IDY2LjcxNTcgMTY4LjI4NCA2MCAxNjAgNjBDMTUxLjcxNiA2MCAxNDUgNjYuNzE1NyAxNDUgNzVDMTQ1IDgzLjI4NDMgMTUxLjcxNiA5MCAxNjAgOTBaIiBmaWxsPSIjNjY2Ii8+CjxwYXRoIGQ9Ik0xNjAgMTIwQzE0MC4xODggMTIwIDEyMCA5OS44MTE3IDEyMCA3NUMxMjAgNTAuMTg4MyAxNDAuMTg4IDMwIDE2MCAzMEMxNzkuODEyIDMwIDIwMCA1MC4xODgzIDIwMCA3NUMyMDAgOTkuODExNyAxNzkuODEyIDEyMCAxNjAgMTIwWiIgZmlsbD0iIzY2NiIvPgo8L3N2Zz4K';" />
               <div class="play-overlay">
                 <i class="fas fa-play"></i>
               </div>
@@ -322,6 +353,16 @@
       // Update featured playlist title
       const featuredTitle = document.querySelector('.featured-playlist .section-header h2');
       featuredTitle.innerHTML = `<i class="fas fa-star"></i> ${title} Playlist`;
+      
+      // Show video player and hide placeholder
+      const videoPlayer = document.querySelector('.video-player');
+      const placeholder = document.querySelector('.video-placeholder');
+      const iframeElement = document.getElementById('main-video');
+      
+      if (placeholder && iframeElement) {
+        placeholder.style.display = 'none';
+        iframeElement.style.display = 'block';
+      }
     }
 
     // Play specific video
@@ -341,6 +382,14 @@
       
       // Set default playlist
       loadPlaylist('PLr6-GrHUlVf_ZNmuQSXdS197Oyr1L9sPB', 'Web Development Fundamentals');
+      
+      // Add click handler for featured video placeholder
+      const videoPlaceholder = document.querySelector('.video-placeholder');
+      if (videoPlaceholder) {
+        videoPlaceholder.addEventListener('click', function() {
+          loadPlaylist('PLr6-GrHUlVf_ZNmuQSXdS197Oyr1L9sPB', 'Web Development Fundamentals');
+        });
+      }
     });
   </script>
 </body>
