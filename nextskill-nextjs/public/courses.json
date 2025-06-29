@@ -1,0 +1,58 @@
+[
+    {
+      "id": "web-dev",
+      "title": "Beginner Web Dev",
+      "category": "Web Development",
+      "difficulty": "Beginner",
+      "description": "Learn to build websites using HTML, CSS, and JavaScript.",
+      "skills": ["HTML", "CSS", "JS"],
+      "status": "Open",
+      "image": "https://images.surferseo.art/9602bc4b-cfc4-410e-b291-611d478c9d6a.png",
+      "price": 29.99,
+      "instructor": "Jane Doe",
+      "rating": 4.5,
+      "reviews": 120
+    },
+    {
+      "id": "database-dev",
+      "title": "Database Development",
+      "category": "Database",
+      "difficulty": "Intermediate",
+      "description": "Design, build, and manage SQL-based databases.",
+      "skills": ["SQL", "DB Design"],
+      "status": "Starting Soon",
+      "image": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*FexesWyItVXebqSSqpcWng.png",
+      "price": 34.99,
+      "instructor": "John Smith",
+      "rating": 4.2,
+      "reviews": 98
+    },
+    {
+      "id": "devops",
+      "title": "DevOps Mastery",
+      "category": "DevOps",
+      "difficulty": "Intermediate/Advanced",
+      "description": "Automate development & operations with modern DevOps tools.",
+      "skills": ["CI/CD", "Docker", "Kubernetes"],
+      "status": "Open",
+      "image": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hnrlp3W6kfInWHtJd9Vvag.jpeg",
+      "price": 39.99,
+      "instructor": "Alex Lee",
+      "rating": 4.7,
+      "reviews": 143
+    },
+    {
+      "id": "data-science",
+      "title": "Data Science Mastery",
+      "category": "DataScience",
+      "difficulty": "Intermediate/Advanced",
+      "description": "Master data analysis, machine learning, and statistical modeling techniques.",
+      "skills": ["Python", "Machine Learning", "Statistics"],
+      "status": "Open",
+      "image": "https://www.mygreatlearning.com/blog/wp-content/uploads/2019/09/What-is-data-science-2.jpg",
+      "price": 44.99,
+      "instructor": "Maria Garcia",
+      "rating": 4.8,
+      "reviews": 210
+    }
+  ] 
